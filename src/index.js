@@ -58,18 +58,14 @@ export default function withPropsCombinations (component, possibleValuesByPropNa
 
     const propsCombinations = combinationsModifier(combinations(possibleValuesByPropName))
 
-    return (
-      <div>
-        {propsCombinations.map((props) =>
+    return propsCombinations.map((props) =>
           <CombinationRenderer
             Component={component}
             props={props}
             options={options}
             key={objectHash(props)}
           />
-        )}
-      </div>
-    )
+        )
   }
 }
 

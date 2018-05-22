@@ -98,18 +98,14 @@ function withPropsCombinations(component, possibleValuesByPropName, userOptions)
 
     var propsCombinations = combinationsModifier((0, _utils.combinations)(possibleValuesByPropName));
 
-    return _react2.default.createElement(
-      'div',
-      null,
-      propsCombinations.map(function (props) {
-        return _react2.default.createElement(CombinationRenderer, {
-          Component: component,
-          props: props,
-          options: options,
-          key: (0, _objectHash2.default)(props)
-        });
-      })
-    );
+    return propsCombinations.map(function (props) {
+      return _react2.default.createElement(CombinationRenderer, {
+        Component: component,
+        props: props,
+        options: options,
+        key: (0, _objectHash2.default)(props)
+      });
+    });
   };
 }
 
